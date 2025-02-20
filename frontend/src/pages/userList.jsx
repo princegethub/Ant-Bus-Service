@@ -7,7 +7,7 @@ const UserList = () => {
   useEffect(() => {
     // API call to fetch users
    axios
-     .get("http://localhost:3000/api/v1/user/userlist")
+     .get("https://ant-bus-service-backend.onrender.com/api/v1/user/userlist")
      .then(res => setUsers(res.data.data))
      .catch(err => console.error(err));
   }, []);
