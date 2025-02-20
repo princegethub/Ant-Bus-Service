@@ -2,7 +2,8 @@ import React, { useState , useEffect } from "react";
 import Video from "../assets/video/from bg.mp4";
 import FreeBus from "../assets/Freebus.png";
 import "../index.css";
-import { Dialog } from "@material-ui/core"; // Import Dialog from Material-UI
+import { Dialog } from "@mui/material";
+
 import InputField from "../components/Booking/inputFiled";
 import axios from "axios";
 
