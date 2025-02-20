@@ -16,9 +16,9 @@ const BusBookingForm = () => {
 
   useEffect(() => {
     // API call to fetch users
-    axios
-      .get("https://ant-bus-service-backend.onrender.com/api/v1/user/userlist")
-      .then((res) => {
+   axios
+     .get("https://ant-bus-service-backend.onrender.com/api/v1/user/userlist")
+     .then(res => {
         setUsers(res.data.data);
         setAvailableSeats(49 - res.data.data.length);
       })
