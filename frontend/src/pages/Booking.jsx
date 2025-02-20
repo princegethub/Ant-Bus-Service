@@ -18,7 +18,7 @@ const BusBookingForm = () => {
   useEffect(() => {
     // API call to fetch users
    axios
-     .get("http://localhost:3000/api/v1/user/userlist")
+     .get("https://ant-bus-service-backend.onrender.com/api/v1/user/userlist")
      .then(res => {
         setUsers(res.data.data);
         setAvailableSeats(49 - res.data.data.length);
@@ -140,7 +140,7 @@ const BusBookingForm = () => {
       });
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/user/register",
+        "https://ant-bus-service-backend.onrender.com/api/v1/user/register",
         formDataToSend,
         {
           headers: {
