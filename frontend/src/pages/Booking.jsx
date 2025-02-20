@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Video from "@/assets/video/from bg.mp4";
 import FreeBus from "@/assets/Freebus.png";
 import "../index.css";
@@ -6,8 +6,6 @@ import { Dialog } from "@mui/material";
 
 import InputField from "../components/Booking/inputFiled";
 import axios from "axios";
-
-
 
 const BusBookingForm = () => {
   const [loading, setLoading] = useState(false);
@@ -18,17 +16,14 @@ const BusBookingForm = () => {
 
   useEffect(() => {
     // API call to fetch users
-   axios
-     .get("http://localhost:3000/api/v1/user/userlist")
-     .then(res => {
+    axios
+      .get("https://ant-bus-service-backend.onrender.com/api/v1/user/userlist")
+      .then((res) => {
         setUsers(res.data.data);
         setAvailableSeats(49 - res.data.data.length);
-     })
-     .catch(err => console.error(err));
+      })
+      .catch((err) => console.error(err));
   }, []);
-
-
-
 
   const [formData, setFormData] = useState({
     name: "",
@@ -43,7 +38,6 @@ const BusBookingForm = () => {
   const [successDialogOpen, setSuccessDialogOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -103,28 +97,34 @@ const BusBookingForm = () => {
       return;
     }
 
-    if(formData.aadhar && formData.aadhar.length !== 12) {
-      alert("Please enter a valid 12 digit aadhar number"); 
+    if (formData.aadhar && formData.aadhar.length !== 12) {
+      alert("Please enter a valid 12 digit aadhar number");
       return;
     }
-    if(formData.phone && formData.phone.length !== 10) {
+    if (formData.phone && formData.phone.length !== 10) {
       alert("Please enter a valid 10 digit phone number");
       return;
     }
-    if(formData.email && !formData.email.includes('@') && !formData.email.includes('.') && formData.email.length < 5) {
+    if (
+      formData.email &&
+      !formData.email.includes("@") &&
+      !formData.email.includes(".") &&
+      formData.email.length < 5
+    ) {
       alert("Please enter a valid email address");
       return;
     }
-    if(formData.addharImage && formData.addharImage.size > 1024 * 1024 * 2) {
+    if (formData.addharImage && formData.addharImage.size > 1024 * 1024 * 2) {
       alert("Please upload a file less than 2MB");
       return;
     }
-    if(formData.addharImage && formData.addharImage.type !== 'application/pdf') {
+    if (
+      formData.addharImage &&
+      formData.addharImage.type !== "application/pdf"
+    ) {
       alert("Please upload a pdf file");
       return;
     }
-   
-
 
     if (availableSeats === 0) {
       alert("Sorry, all seats are already booked.");
@@ -141,7 +141,7 @@ const BusBookingForm = () => {
       });
 
       const { data } = await axios.post(
-        "http://localhost:3000/api/v1/user/register",
+        "https://ant-bus-service-backend.onrender.com/api/v1/user/register",
         formDataToSend,
         {
           headers: {
@@ -149,16 +149,15 @@ const BusBookingForm = () => {
           },
         }
       );
-      console.log('data: ', data);
+      console.log("data: ", data);
 
       console.log("Bus booked successfully: ", data);
       setIsSuccess(true);
       setSuccessMessage("");
       setSuccessDialogOpen(true);
 
-
-       // Reduce available seats by 1
-       setAvailableSeats((prevSeats) => prevSeats - 1);
+      // Reduce available seats by 1
+      setAvailableSeats((prevSeats) => prevSeats - 1);
 
       setFormData({
         name: "",
@@ -168,7 +167,7 @@ const BusBookingForm = () => {
         pickupLocation: "",
         gender: "",
         aadhar: "",
-        addharImage: '',
+        addharImage: "",
       });
     } catch (error) {
       setSuccessMessage(error.response?.data?.message || "");
@@ -202,8 +201,7 @@ const BusBookingForm = () => {
                       Book Your Seat
                     </h2>
                     <h2 className="text-3xl font-bold text-green-900">
-                    Available seat: {availableSeats}
-
+                      Available seat: {availableSeats}
                     </h2>
                   </div>
 
@@ -300,7 +298,6 @@ const BusBookingForm = () => {
                   </div>
 
                   <div className="form_group mb-6">
-                  
                     <input
                       type="file"
                       name="addharImage"
@@ -310,7 +307,7 @@ const BusBookingForm = () => {
                       accept=".pdf"
                       required
                     />
-                   Upload addhar pdf
+                    Upload addhar pdf
                   </div>
 
                   <button
