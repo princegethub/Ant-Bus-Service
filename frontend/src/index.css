@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+  .active {
+    @apply text-primary;
+  }
+}
+
+
+
+
+@keyframes bus-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100vw);
+    /* Move completely to the right */
+  }
+}
+
+@keyframes bus-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    /* Move completely to the left */
+  }
+}
+
+@keyframes shadowAnimation {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.animate-bus-left {
+  animation: bus-left 10s linear infinite;
+}
+
+.animate-bus-right {
+  animation: bus-right 10s linear infinite;
+}
+
+.animate-shadow {
+  animation: shadowAnimation 3s infinite;
+}
+
+/* .shadow-video-wrapper {
+  position: relative;
+  display: inline-block;
+} */
+
+.shadow-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Makes sure the video is in the background */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: inset 0 0 30px 10px rgba(255, 165, 0, 0.7);
+  /* Orange inner shadow */
+}
+
+
+@keyframes scaleAnimation {
+
+  0%,
+  100% {
+    transform: scale(1) translateX(-20%);
+  }
+
+  50% {
+    transform: scale(1.1) translateX(-18%);
+  }
+}
+
+.animate-bus {
+  animation: scaleAnimation 8s infinite;
+}
+
+ .p::after {
+  content: '';
+  width: 50px;
+  height: 35px;
+  background: linear-gradient(#EA580C, white);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: -1;
+  transform: rotate(10deg);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+ .p {
+  margin: auto;
+  font-size: 20px;
+  color: #009688;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
