@@ -45,7 +45,7 @@ const BlogsComp = () => {
         <div className="text-center mb-12">
 
 <p style={{color: '#ea580c'}} className="text-xl font-bold text-orange-600 p relative inline-block">
-Journey
+
 </p>
 
 

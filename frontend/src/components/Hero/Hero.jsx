@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../index.css";
-import Bus from "../../assets/bus.png";
-import BusLeft from "../../assets/bus left.png";
-import Highway from "../../assets/highway.jpg";
+import Bus from "@/assets/bus.png";
+import BusLeft from "@/assets/bus left.png";
+import Highway from "@/assets/highway.jpg";
 
 
 const Hero = () => {
   return (
-    <div className="h-screen flex items-center justify-center relative  overflow-hidden">
+    <div className="h-[500px] flex items-center justify-center relative  overflow-hidden">
       {/* Main Content */}
       <div className="container w-[90%] mx-auto flex flex-col sm:flex-row items-center justify-between px-6 z-10">
         {/* Left Section (Text) */}
-        <div className="w-full sm:w-1/2 text-center sm:text-left space-y-6">
+        <div className="w-full  sm:w-1/2 text-center     mt-20 sm:text-left space-y-6">
           <h1
             className="text-2xl text-white sm:text-4xl lg:text-2xl font-bold leading-tight mb-4"
             style={{
@@ -36,7 +36,7 @@ const Hero = () => {
           </h2>
 
           <p
-            className="text-white text-lg sm:text-xl lg:text-sm font-light mb-6 -mt-8"
+            className="text-white text-lg sm:text-xl lg:text-sm font-light mb-6 -mt-12"
             style={{ fontFamily: "'Roboto', sans-serif", letterSpacing: 2 }}
           >
             - Secure Your Seat Now and be part of this divine journey. Limited
@@ -61,26 +61,27 @@ const Hero = () => {
       </div>
 
       {/* Highway with Moving Buses */}
-      <div
+      {/* <div
         className="absolute bottom-0 left-0 w-full h-40 bg-contain bg-repeat-x"
         style={{ backgroundImage: `url(${Highway})` }}
-      >
+      > */}
         {/* Left Bus */}
-        <img
+        {/* <img
           src={Bus}
           alt="Bus Moving Left"
-          className="absolute left-[-100px] bottom-0 animate-bus-left"
-          style={{ width: "200px", height: "auto" }}
-        />
+          className="absolute left-[-100px] bottom-[-75px] animate-bus-left"
+          style={{ width: "250px", height: "auto" }}
+        /> */}
+
 
         {/* Right Bus (Rotated 180 degrees) */}
-        <img
+        {/* <img
           src={BusLeft}
           alt="Bus Moving Right"
-          className="absolute right-[-100px] bottom-0 animate-bus-right"
-          style={{ width: "150px", height: "auto" }}
+          className="absolute right-[-200px] bottom-[-150px] animate-bus-right"
+          style={{ width: "250px", height: "auto" }}
         />
-      </div>
+      </div> */}
 
       {/* Overlay Gradient */}
       {/* <div className="absolute inset-0 bg-gradient-to-t from-[#F56900]/20 to-transparent z-0"></div>   */}

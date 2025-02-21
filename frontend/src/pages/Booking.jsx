@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Video from "@/assets/video/from bg.mp4";
-import FreeBus from "@/assets/Freebus.png";
+import FreeBus from "@/assets/sadhu1.jpg";
 import "../index.css";
 import { Dialog } from "@mui/material";
 
@@ -182,185 +182,183 @@ const BusBookingForm = () => {
 
   return (
     <div className="relative w-full h-full max-w-[100vw] overflow-hidden">
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src={Video}
-        autoPlay
-        loop
-        muted
-      ></video>
+  <div className="relative mx-auto w-[80vw] lg:w-[95vw]  z-10 pt-14">
+    <div className="py-10">
+      <section className="contact_section  w-full flex flex-col lg:flex-row items-center gap-10">
 
-      <div className="relative mx-auto w-[80vw] lg:w-[95vw] lg:left-28 z-10  pt-14">
-        <div className="py-10">
-          <section className="contact_section  w-full">
-            <div className=" w-[100w]">
-              <form onSubmit={handleSubmit} className="mt-6 flex ">
-                <div className="contact_form w-[100%] sm:w-full py-6">
-                  <div className="flex justify-between items-center">
-                    <h2 className="text-3xl font-bold text-orange-900">
-                      Book Your Seat
-                    </h2>
-                    <h2 className="text-3xl font-bold text-green-900">
-                      Available seat: {availableSeats}
-                    </h2>
-                  </div>
+{/* Image Section */}
+<div className="w-full lg:w-1/2 mt-8 flex justify-center items-center">
+  <div className="relative">
+    <img
+      src={FreeBus}
+      alt="Free Bus"
+      className="h-[550px]   w-[480px] object-cover rounded-lg max-w-[600px]"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-[#F56900] to-transparent w-full h-full rounded-lg opacity-50"></div>
+  </div>
+</div>
 
-                  <div className="form_group mb-6 mt-2 ">
-                    <select
-                      name="village"
-                      value={formData.village}
-                      onChange={handleVillageChange}
-                      className="w-full px-4 py-3 outline-none focus:outline-none  text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg"
-                      required
-                    >
-                      <option value="">Select Village</option>
-                      <option value="Masand Garhi">Masand Garhi</option>
-                      <option value="Ekhu">Ekhu</option>
-                    </select>
-                  </div>
 
-                  <div className="name_email_form flex flex-wrap gap-4 mb-6">
-                    <div className="form_group flex-1 min-w-[calc(50%-10px)]">
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                        placeholder="Name"
-                        required
-                      />
-                    </div>
 
-                    <div className="form_group flex-1 min-w-[calc(50%-10px)]">
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                        placeholder="Phone Number"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form_group flex-1 mb-6 min-w-[calc(50%-10px)]">
-                    <select
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                      required
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <div className="form_group mb-6">
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-
-                  <div className="name_email_form flex flex-wrap gap-4 mb-6">
-                    <div className="form_group flex-1 min-w-[calc(50%-10px)]">
-                      <input
-                        type="text"
-                        name="aadhar"
-                        value={formData.aadhar}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                        placeholder="Aadhar Number"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="form_group mb-6">
-                    <input
-                      type="text"
-                      name="pickupLocation"
-                      value={formData.pickupLocation}
-                      readOnly
-                      className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                      placeholder="Pickup Location"
-                    />
-                  </div>
-
-                  <div className="form_group mb-6">
-                    <input
-                      type="file"
-                      name="addharImage"
-                      placeholder="Upload Aadhar Image"
-                      onChange={handleFileChange}
-                      className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
-                      accept=".pdf"
-                      required
-                    />
-                    Upload addhar pdf
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="button-86 w-1/4 px-6 py-3 mt-0 text-white bg-orange-600 hover:scale-110 transition rounded-lg"
-                    disabled={loading}
-                  >
-                    {loading ? "Booking..." : "Book My Seat"}
-                  </button>
-
-                  {error && <p className="text-red-600 mt-2">{error}</p>}
-                </div>
-
-                <div className="free-bus hidden lg:flex items-center overflow-visible">
-                  <img
-                    src={FreeBus}
-                    alt=""
-                    className="h-auto w-full animate-bus"
-                    style={{ maxWidth: "800px", transform: "translateX(-20%)" }}
-                  />
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
+        {/* Form Section */}
+    {/* Form Section */}
+{/* Form Section */}
+<div className="w-full lg:w-3/4 mr-4">
+  <form onSubmit={handleSubmit} className="mt-6">
+    <div className="contact_form w-full sm:w-full py-6">
+      <div className="flex justify-between items-center">
+        <h2 className="text-3xl font-bold text-orange-900">Book Your Seat</h2>
+        <h2 className="text-3xl font-bold text-green-900">
+          Available seat: {availableSeats}
+        </h2>
       </div>
 
-      <Dialog
-        open={successDialogOpen}
-        onClose={() => setSuccessDialogOpen(false)}
+      {/* Village Select (Required First) */}
+      <div className="form_group mb-3 mt-2">
+        <select
+          name="village"
+          value={formData.village}
+          onChange={handleVillageChange}
+          className="w-full px-4 py-3 outline-none text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg"
+          required
+        >
+          <option value="">Select Village</option>
+          <option value="Masand Garhi">Masand Garhi</option>
+          <option value="Ekhu">Ekhu</option>
+        </select>
+      </div>
+
+      {/* Disable Form Until Village is Selected */}
+      <fieldset
+        disabled={!formData.village}
+        className={`transition-opacity duration-300 ${formData.village ? "opacity-100" : "opacity-60"}`}
       >
-        <div className="p-4 border-2 border-orange-600 ">
-          <h2
-            className={`text-xl font-bold ${
-              isSuccess ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {isSuccess ? "Success" : "Error"}
-          </h2>
-          <p>
-            {isSuccess
-              ? "Your bus has been booked successfully. We will send you a confirmation email shortly."
-              : `Sorry, your bus has not been booked successfully. Please try again. ${successMessage}`}
-          </p>
-          <button
-            onClick={() => setSuccessDialogOpen(false)}
-            className="mt-4 px-4 py-2 bg-orange-500 rounded-lg"
-          >
-            OK
-          </button>
+        <div className="name_email_form flex flex-wrap gap-4 mb-3">
+          <div className="form_group flex-1 min-w-[calc(50%-10px)]">
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div className="form_group flex-1 min-w-[calc(50%-10px)]">
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
         </div>
-      </Dialog>
+
+        <div className="form_group flex-1 mb-3 min-w-[calc(50%-10px)]">
+          <select
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+            required
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div className="form_group mb-3">
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div className="form_group mb-3">
+          <input
+            type="text"
+            name="aadhar"
+            value={formData.aadhar}
+            onChange={handleChange}
+            className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+            placeholder="Aadhar Number"
+            required
+          />
+        </div>
+
+        <div className="form_group mb-3">
+          <input
+            type="text"
+            name="pickupLocation"
+            value={formData.pickupLocation}
+            readOnly
+            className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+            placeholder="Pickup Location"
+          />
+        </div>
+
+        <div className="form_group mb-6">
+          <input
+            type="file"
+            name="addharImage"
+            placeholder="Upload Aadhar Image"
+            onChange={handleFileChange}
+            className="w-full px-4 py-3 text-gray-700 bg-gray-100 border-2 border-dotted border-orange-600 rounded-lg focus:outline-none"
+            accept=".pdf"
+            required
+          />
+          Upload Aadhar PDF
+        </div>
+
+        <button
+          type="submit"
+          className="w-1/4 px-6 py-3 text-white bg-orange-600 hover:scale-110 transition rounded-lg"
+          disabled={loading}
+        >
+          {loading ? "Booking..." : "Book My Seat"}
+        </button>
+        {error && <p className="text-red-600 mt-2">{error}</p>}
+      </fieldset>
     </div>
+  </form>
+</div>
+
+
+        
+      </section>
+    </div>
+  </div>
+  <Dialog open={successDialogOpen} onClose={() => setSuccessDialogOpen(false)}>
+    <div className="p-4 border-2 border-orange-600">
+      <h2 className={`text-xl font-bold ${isSuccess ? "text-green-600" : "text-red-600"}`}>
+        {isSuccess ? "Success" : "Error"}
+      </h2>
+      <p>
+        {isSuccess
+          ? "Your bus has been booked successfully. We will send you a confirmation email shortly."
+          : `Sorry, your bus has not been booked successfully. Please try again. ${successMessage}`}
+      </p>
+      <button
+        onClick={() => setSuccessDialogOpen(false)}
+        className="mt-4 px-4 py-2 bg-orange-500 rounded-lg"
+      >
+        OK
+      </button>
+    </div>
+  </Dialog>
+</div>
+
   );
 };
 

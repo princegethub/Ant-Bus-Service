@@ -7,11 +7,14 @@ import Testimonial from "../components/Testimonial/Testimonial";
 import Banner from "../components/Banner/Banner";
 import BannerPic from "../components/BannerPic/BannerPic";
 
-import BannerImg from "@/assets/maha-kumbh-banner.jpg";
+import BannerImg from "@/assets/banneImage.jpg";
+import HeroBanner from "@/assets/banner.webp";
 
 import OrderPopup from "../components/OrderPopup/OrderPopup";
-import '../index.css'
+import "../index.css";
 import FeaturesSection from "./FeaturesSection";
+import OurGallery from "./OurGallery";
+import Organizer from "./Orgainizer";
 
 const Home = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
@@ -22,10 +25,10 @@ const Home = () => {
   return (
     <>
       <div>
-      <div className="h-screen relative overflow-hidden shadow-video-wrapper">
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-[#F56900] to-transparent w-[60%]"></div>
-
+        <div className="h-[500px]  w-full  relative overflow-hidden shadow-video-wrapper">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F56900] to-transparent w-[100%]"></div>
+          {/* 
   <video
     autoPlay
     loop
@@ -33,16 +36,23 @@ const Home = () => {
     className="absolute right-0 -top-50 h-[1000px] w-full object-cover shadow-video"
   >
     <source src={NatureVid} type="video/mp4" />
-  </video>
+  </video> */}
 
-  <Hero />
-</div>
+          <img
+            src={HeroBanner}
+            alt=""
+            className="absolute right-0 h-[500px] w-full object-contain shadow-video "
+          />
 
+          <Hero />
+        </div>
 
         {/* <Places handleOrderPopup={handleOrderPopup} /> */}
-        <FeaturesSection />
+        <Organizer />
+        {/* <FeaturesSection /> */}
         {/* <BannerPic img={BannerImg} /> */}
         <BlogsComp />
+        <OurGallery />
         <Banner />
         <BannerPic img={BannerImg} />
         <Testimonial />
@@ -53,3 +63,10 @@ const Home = () => {
 };
 
 export default Home;
+
+
+// Rajkumar sharma 8
+
+// masand ghadi
+
+// Tehsil mart mathura

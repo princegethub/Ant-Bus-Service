@@ -30,13 +30,13 @@ export const registerUser = async (req, res) => {
 
     console.log("Checking for existing user...");
     const existingUser = await UserModel.findOne({
-      $or: [{ phone: formattedPhone }, { aadhar } , { email } ],
+      $or: [ { aadhar } , {email}],
     });
 
     if (existingUser) {
       return res.status(400).json({
         success: false,
-        message: "User with this phone number or Aadhar already exists",
+        message: "User with this phone number or email already exists",
       });
     }
 
