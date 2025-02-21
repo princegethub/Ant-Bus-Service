@@ -5,7 +5,7 @@ import "../index.css";
 
 const features = [
   {
-    title: "Mathura Tehsil Seva",
+    title: "Tehsil Mart Mathura",
     description:
       "Rajkumar Sir, Mathura Tehsil ke Ekhu aur Masand Ghadi gaon se hain. Unka lakshya hai apne gaon ke logon ke liye behtareen seva dena.",
   },
