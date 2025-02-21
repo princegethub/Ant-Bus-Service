@@ -1,6 +1,6 @@
 import React from "react";
 import { FaShieldAlt } from "react-icons/fa";
-import FreeBus from "@/assets/rajkumar Sir.jpg";
+import FreeBus from "@/assets/rajkumarSir.jpg";
 import "../index.css";
 
 const features = [
