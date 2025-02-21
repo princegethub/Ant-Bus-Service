@@ -1,6 +1,6 @@
 import React from "react";
 import { FaShieldAlt } from "react-icons/fa";
-import FreeBus from '@/assets/freebus.png';
+import FreeBus from '@/assets/Freebus.png';
 import "../index.css";
 
 const features = [
