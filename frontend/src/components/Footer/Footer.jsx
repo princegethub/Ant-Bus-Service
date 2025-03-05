@@ -1,4 +1,3 @@
-import React from "react";
 import FooterLogo from "@/assets/logo.png";
 import FooterImg from "@/assets/11852597.jpg";
 import {
@@ -8,7 +7,7 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
-import NatureVid from "@/assets/video/footer.mp4";
+
 import { Link } from "react-router-dom";
 
 const FooterLinks = [

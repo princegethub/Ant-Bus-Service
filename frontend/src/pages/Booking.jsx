@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Video from "@/assets/video/from bg.mp4";
+
 import FreeBus from "@/assets/sadhu1.jpg";
 import "../index.css";
 import { Dialog } from "@mui/material";
 
-import InputField from "../components/Booking/inputFiled";
 import axios from "axios";
 
 const BusBookingForm = () => {
