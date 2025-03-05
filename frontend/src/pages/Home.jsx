@@ -19,13 +19,13 @@ import Organizer from "./Orgainizer";
 const Home = () => {
   const [orderPopup, setOrderPopup] = React.useState(false);
 
-  const handleOrderPopup = () => {
-    setOrderPopup(!orderPopup);
-  };
+  // const handleOrderPopup = () => {
+  //   setOrderPopup(!orderPopup);
+  // };
   return (
     <>
       <div>
-        <div className="h-[500px]  w-full  relative overflow-hidden shadow-video-wrapper">
+        <div className="h-screen  w-full  relative overflow-hidden shadow-video-wrapper">
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#F56900] to-transparent w-[100%]"></div>
           {/* 
@@ -41,15 +41,15 @@ const Home = () => {
           <img
             src={HeroBanner}
             alt=""
-            className="absolute right-0 h-[500px] w-full object-contain shadow-video "
+            className="absolute right-0 h-screen w-full object-contain shadow-video "
           />
 
           <Hero />
         </div>
 
         {/* <Places handleOrderPopup={handleOrderPopup} /> */}
-        <Organizer />
-        {/* <FeaturesSection /> */}
+        {/* <Organizer /> */}
+        <FeaturesSection />
         {/* <BannerPic img={BannerImg} /> */}
         <BlogsComp />
         <OurGallery />

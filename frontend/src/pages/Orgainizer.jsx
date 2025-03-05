@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaShieldAlt } from "react-icons/fa";
 import FreeBus from "@/assets/RajkumarSir.jpg";
 import "../index.css";

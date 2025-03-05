@@ -8,7 +8,7 @@ import Highway from "@/assets/highway.jpg";
 
 const Hero = () => {
   return (
-    <div className="h-[500px] flex items-center justify-center relative  overflow-hidden">
+    <div className="h-screen flex items-center justify-center relative  overflow-hidden">
       {/* Main Content */}
       <div className="container w-[90%] mx-auto flex flex-col sm:flex-row items-center justify-between px-6 z-10">
         {/* Left Section (Text) */}
